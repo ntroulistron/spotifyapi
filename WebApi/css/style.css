@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: Jost;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Adjust base font size */
+    line-height: 1.6; /* Increase line height for better readability */
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 0 20px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.brand-logo .logo {
+    height: 64px; /* Adjust height as necessary */
+    margin-right: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-wrapper ul li a:hover{
+    transform: scale(1.05);
+}
+.main-content {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjust to account for navbar height */
+    padding: 20px; /* Ensure consistent padding */
+}
+
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: #282828;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-results {
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.input-field select,
+.input-field input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #282828;
+    border: none;
+    color: white;
+    border: 1px solid #fff;
+    box-sizing: border-box; /* Add this line to ensure padding and border are included in the width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 18px; /* Larger font size for better readability */
+    font-weight: 600; /* Semi-bold font weight for aesthetic appeal */
+    color: #fff; /* White text color */
+    background-color: #333; /* Darker background for the dropdown */
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px 15px; /* Padding for a better visual */
+    appearance: none; /* Remove default system appearance */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M6%209L10.5%204.5L11.3107%205.31066L6%2010.6213L0.68934%205.31066L1.5%204.5L6%209Z%22%20fill%3D%22white%22%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer; /* Change cursor on hover over the select element */
+}
+
+.input-field select:hover {
+    background-color: #444; /* Slightly lighter when hovered */
+}
+
+.input-field select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.5); /* Green glow to match Spotify theme */
+}
+
+.btn {
+    background-color: #1db954;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1ed760; /* A lighter green for hover */
+    transform: scale(1.05); /* Slightly increase the size */
+}
+
+.page-footer {
+    background-color: #181818;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.track-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.track-card:hover {
+    transform: translateY(-5px); /* Moves the card up slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increases shadow */
+}
+
+.track-image {
+    width: 100%;
+    height: auto;
+}
+
+.track-info {
+    padding: 15px; /* More padding for better text display */
+    text-align: center;
+}
+
+.track-title {
+    font-size: 16px;
+    font-weight:bold;
+    margin: 10px 0;
+}
+
+.track-artist,
+.track-album {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.track-preview {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1db954;
+    text-decoration: none;
+}
+
+.no-preview {
+    display: inline-block;
+    margin-top: 10px;
+    color: #888;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 20%;
+    }
+
+    .search-results {
+        width: 80%;
+    }
+
+    .track-card {
+        width: calc(25% - 20px); /* Return to original width for larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .brand-logo {
+        font-size: 20px;
+    }
+
+    .track-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
